@@ -1,5 +1,4 @@
-[README.md](https://github.com/user-attachments/files/35412681/README.md)
-# Bot-conciliateur-new# Alerte SMS conciliateur de justice (Paris 1er à 20e)
+# Alerte SMS conciliateur de justice (Paris 1er à 20e)
 
 Vérifie toutes les 5 minutes (7h à 23h) la page RDV DAJ et envoie un SMS avec le jour, l'heure, le lieu et le lien dès qu'un créneau apparaît dans Paris intra muros. Un même créneau n'est signalé qu'une fois.
 
