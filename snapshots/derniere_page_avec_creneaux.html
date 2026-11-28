@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<base href="https://rdvdaj.apps.paris.fr:443/rdvdaj/">
+<title>RDV DAJ - Mapping</title>
+<meta http-equiv="x-ua-compatible" content="IE=edge" >
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html">
+<meta name="author" content="<author>">
+<meta name="copyright" content="<copyright>">
+<meta name="keywords" content="<keywords>">
+<meta name="description" content="<description>">
+<meta name="generator" content="LUTECE 7.1.8">
+<!-- Dublin Core metadatas -->
+<meta name="DC.Creator" content="<author>">
+<meta name="DC.Rights" content="<copyright>">
+<meta name="DC.Subject" content="<keywords>">
+<meta name="DC.Description" content="<description>">
+<!-- Set the viewport width to device width for mobile -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Le style -->
+<link href="js/jquery/plugins/ui/css/jquery-ui-1.10.0.custom.css" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="css/datepicker.css" rel="stylesheet">
+<link href="css/page_template_styles.css" rel="stylesheet">
+<link href="https://moncompte.paris.fr/moncompte/assets/css/banner-moncompte.css" rel="stylesheet">
+<link rel="stylesheet" href="css/theme-parisfr-tac.css"><!-- Cookies consent -->
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!-- JQUERY UI: Keep for compatibility -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <link rel="stylesheet" href="js/jquery/plugins/ui/css/jquery.ui-1.10.0.ie.css">
+<![endif]-->
+<!-- Le fav and touch icons -->
+<link rel="shortcut icon" href="https://rdvdaj.apps.paris.fr:443/rdvdaj/favicon.ico"/>
+<!-- 
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="apple-touch-icon-57-precomposed.png">
+-->
+
+
+<!-- no document_meta -->
+<!-- no RSS feed -->
+<link rel="stylesheet"  href="css/plugins/appointment/appointment.css?lutece_h=198dee91a53008fb78d944ce09d485d02740d8b85e94ed052669b02c94723d1a" type="text/css" crossorigin="anonymous" media="screen" /><link rel="stylesheet"  href="css/plugins/../../js/plugins/leaflet/leaflet/leaflet.css?lutece_h=ca6646868f968de410da3be31c89d825dd21db40c8ebf004d1f62af811985ea6" type="text/css" crossorigin="anonymous" media="screen" /><link rel="stylesheet"  href="css/plugins/../../js/plugins/leaflet/leaflet/MarkerCluster.css?lutece_h=16faaebf3d9fb236d29189cdc15d6f9a257ebf0ac6487f0f000ba79a53a64b2b" type="text/css" crossorigin="anonymous" media="screen" /><link rel="stylesheet"  href="css/plugins/../../js/plugins/leaflet/leaflet/MarkerCluster.Default.css?lutece_h=61258232d98d64dc2a7b1e02130d67421bc5b9bda5994eef70228ff97570c170" type="text/css" crossorigin="anonymous" media="screen" /><link rel="stylesheet"  href="css/plugins/appointment/modules/solrsearchapp/leaflet-appointmentsearch.css?lutece_h=eec8b4c37a2d1270cee92404a45964e68767a0079a7ca32f2c1e6b7ae949a3ea" type="text/css" crossorigin="anonymous" media="screen" /><link rel="stylesheet"  href="css/plugins/asynchronousupload/jquery.fileupload.css?lutece_h=a18575f08f26474ade5c2e67144d022640c4ec9bbb86de26ce8f5706e9d45690" type="text/css" crossorigin="anonymous" media="screen" /><link rel="stylesheet"  href="css/plugins/asynchronousupload/jquery.fileupload-ui.css?lutece_h=66d3e050ff33dd6f6045034b3c10223effb38c157b6c684a596f0b3d202c24aa" type="text/css" crossorigin="anonymous" media="screen" /><link rel="stylesheet"  href="css/plugins/captcha/modules/jcaptcha/jcaptcha.css?lutece_h=63b681090e546a09a298419f64f242fb5f49bd26e60e3ebe54209d7ef2f08ef7" type="text/css" crossorigin="anonymous" media="screen" /><link rel="stylesheet"  href="css/plugins/workflow/modules/notifygru/workflow_notifygru.css?lutece_h=1a20bd25285ff9d8f25ed252997dafd7a87f3e29f5146a70318cfb036fd10cb3" type="text/css" crossorigin="anonymous" media="screen" />
+<!-- Included JS Files -->
+<script src="js/jquery/jquery.min.js"></script>
+
+</head>
+<body>
+<!-- banner-mon-compte begin -->
+<div class="banner-mon-compte__connexion-wrapper">
+    <a class="banner-mon-compte__connexion-avatar" href="">
+        <span class="banner-mon-compte__my-account"></span>
+    </a>
+</div>
+ <!-- header -->
+<header role="banner" id="site_header">
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle hidden" data-toggle="collapse" data-target="#lutece-navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+          <img src="images/nef.png" alt="" title="Logo Paris">
+        </a>
+    </div>
+    <div class="collapse navbar-collapse" id="lutece-navbar-collapse">
+                <ul class="mylutece">
+            <noscript>
+            <li><a href="jsp/site/plugins/mylutece/DoMyLuteceLogin.jsp"> S'authentifier</a></li>
+</noscript>
+
+<script src="https://moncompte.paris.fr/moncompte/assets/js/banner-moncompte.js"></script>
+
+<script>
+    var pathArray = location.href.split( '/' );
+    var protocol = pathArray[0];
+    var host = pathArray[2];
+    var appName = pathArray[3];
+    var url = protocol + '//' + host + '/' + appName + '/';
+    var currentUrlForLogin = window.location.href;
+    var currentUrlForLogout = currentUrlForLogin;
+    if (window.location.href == url + 'jsp/site/Portal.jsp?page=mylutece&action=login') {
+        initBanner(url+'jsp/site/plugins/mylutece/DoMyLuteceLogin.jsp?auth_provider=mylutece-openam', null, currentUrlForLogout);
+    } else {
+        if (currentUrlForLogin.indexOf('#') >= 0) {
+            if (window.location.href.indexOf("getViewAppointmentForm") >= 0) {
+                currentUrlForLogin = currentUrlForLogout = currentUrlForLogin.substring(0,currentUrlForLogin.indexOf('#')) + "&secondAttempt=true";
+            } else {
+                currentUrlForLogin = currentUrlForLogout = currentUrlForLogin.substring(0,currentUrlForLogin.indexOf('#'));
+            }
+        }
+        initBanner( currentUrlForLogin, null, currentUrlForLogout );
+    }
+</script>
+        </ul>
+        <ul class="nav navbar-nav">
+            
+
+        </ul>
+	</div>
+</div>
+
+<nav class="navHeaderInternal">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<h2>
+					RendezVous
+				</h2>
+			</div>
+		</div>
+   </div>
+</nav>
+
+
+
+</header>
+<!-- end header -->
+<div class="container-fluid">
+<!-- container -->
+
+
+
+<!-- <ul class="breadcrumb">
+	<li><i class="glyphicon glyphicon-home"></i> 
+<a target="_top" href="jsp/site/Portal.jsp?page_id=1">Home</a> &gt;
+		
+Page path
+</li>
+</ul> -->
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="container">        	
+            <div class="row">
+				<div  class="col-xs-12">
+					<div class="formGroupContainer messageContainer" id="message-carto"></div>
+				</div>
+                <div class="col-xs-12">
+								<h3>Appointment map</h3>
+								<p><a href="jsp/site/Portal.jsp?page=appointmentsearch&view=search&amp;category=C_Conciliateur&amp;nb_consecutive_slots=1&amp;role=none#rdv_liste">Display the list of first available appointments</a></p><p class="visible-xs">The map is only available for tablet-sized screens or larger</p>
+			   </div>
+            </div>
+            <div class="row">
+                <div id="map_col" class="hidden-xs col-sm-12 col-md-12" style="position:relative; display:none;">
+                    <div class="row">
+                        <div id="map" class="col-xs-12">
+                            <div class="leaflet-appointment-search" style="height:520px;"></div>
+                            <a class="btn btn-primary btn-sm" id="tgSearchForm" href="#"><i class="fa fa-chevron-left hidden-xs hidden-sm"></i><i class="fa fa-angle-double-down hidden-md hidden-lg"></i><span class="hidden-xs hidden-sm"> Search</span></a>
+                        </div>
+                    </div>
+                    <div class="row text-center" id="occupancyRate">
+                        <div class="col-xs-4">
+                            <p style="margin: 5px 0px;">
+                                <img src="js/plugins/leaflet/leaflet/images/marker_hole.png"/> : Occupation &lt; 70%
+                            </p>
+                        </div>
+                        <div class="col-xs-4">
+                            <p style="margin: 5px 0px;">
+                                <img src="js/plugins/leaflet/leaflet/images/marker_hole_yellow.png"/> : Occupation &lt; 90%
+                            </p>
+                        </div>
+                        <div class="col-xs-4">
+                            <p style="margin: 5px 0px;">
+                                <img src="js/plugins/leaflet/leaflet/images/marker_hole_red.png"/> : Occupation &gt; 90%
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-4" id="searchForm">
+                    <div class="form-horizontal">
+                        <legend>Simple search limited to</legend>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <form method="post" action="jsp/site/Portal.jsp?page=appointmentsearch&amp;category=C_Conciliateur" style="display:inline-block">
+                                    <input name="to_date" value="05/12/2026" type="hidden">
+                                    <button type="submit" class="btn btn-primary btn-sm" name="view_search">7 days</button>
+                                </form>
+                                <form method="post" action="jsp/site/Portal.jsp?page=appointmentsearch&amp;category=C_Conciliateur" style="display:inline-block">
+                                    <input name="to_date" value="12/12/2026" type="hidden">
+                                    <button type="submit" class="btn btn-primary btn-sm" name="view_search">14 days</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <fieldset>
+                        <legend id="advanced_search_button">Advanced search <i class="fa fa-cogs"></i></legend>
+                        <form name="search" method="post" action="jsp/site/Portal.jsp?page=appointmentsearch&amp;category=C_Conciliateur">
+                            <input name="page" value="appointmentsearch" type="hidden">
+                            <input name="role" value="none" type="hidden">
+                            <div id="advanced_search">
+                                <div class="form-group">
+                                    <label>Dates</label>
+                                    <div class="row" style="margin-bottom:3px;">
+                                        <div class="col-sm-6">    
+                                            <label for="from_date" class="sr-only">From</label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">From</span>
+                                                <input class="form-control" id="from_date" name="from_date" type="text" value="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+<!-- WARNING : macro comboWithParams is deprecated -->
+<select id="from_time" name="from_time" class=" form-select"  class="form-control">
+		<option selected="selected" title="06h00" value="06:00" >06h00</option>
+		<option title="09h00" value="09:00" >09h00</option>
+		<option title="12h00" value="12:00" >12h00</option>
+		<option title="15h00" value="15:00" >15h00</option>
+		<option title="18h00" value="18:00" >18h00</option>
+		<option title="21h00" value="21:00" >21h00</option>
+</select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <label for="to_date" class="sr-only">
+                                                To
+                                            </label>
+                                            <div class="input-group">
+                                                <span class="input-group-addon">To</span>
+                                                <input class="form-control" id="to_date" name="to_date" type="text" value="" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+<!-- WARNING : macro comboWithParams is deprecated -->
+<select id="to_time" name="to_time" class=" form-select"  class="form-control">
+		<option title="06h00" value="06:00" >06h00</option>
+		<option title="09h00" value="09:00" >09h00</option>
+		<option title="12h00" value="12:00" >12h00</option>
+		<option title="15h00" value="15:00" >15h00</option>
+		<option title="18h00" value="18:00" >18h00</option>
+		<option selected="selected" title="21h00" value="21:00" >21h00</option>
+</select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Schedule</label>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+<!-- WARNING : macro comboWithParams is deprecated -->
+<select id="from_day_minute" name="from_day_minute" class=" form-select"  class="form-control">
+		<option selected="selected" title="06h00" value="360" >06h00</option>
+		<option title="09h00" value="540" >09h00</option>
+		<option title="12h00" value="720" >12h00</option>
+		<option title="15h00" value="900" >15h00</option>
+		<option title="18h00" value="1080" >18h00</option>
+		<option title="21h00" value="1260" >21h00</option>
+</select>
+                                        </div>
+                                        <div class="col-sm-6">
+<!-- WARNING : macro comboWithParams is deprecated -->
+<select id="to_day_minute" name="to_day_minute" class=" form-select"  class="form-control">
+		<option title="06h00" value="360" >06h00</option>
+		<option title="09h00" value="540" >09h00</option>
+		<option title="12h00" value="720" >12h00</option>
+		<option title="15h00" value="900" >15h00</option>
+		<option title="18h00" value="1080" >18h00</option>
+		<option selected="selected" title="21h00" value="1260" >21h00</option>
+</select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                	<label>Number of consecutive slots (1 per person)</label>
+                                    <div class="row">
+                                    	<div class="col-sm-6">
+
+	<input class="form-control " type="number" name="nb_consecutive_slots" value="1" min="1">
+	                                    </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>
+                                        Days of the week
+                                    </label>
+                                    <div class="checkbox">
+                                        <div class="row">
+                                                        <div class="col-sm-6">
+                                                        <label for="document_type" class="col-xs-12">
+                                                            <input checked class="checkbox" type="checkbox" name="days_of_week" value="1" />
+                                                            &nbsp;Monday (0)
+                                                        </label>
+                                                        
+                                                        
+                                                        <label for="document_type" class="col-xs-12">
+                                                            <input checked class="checkbox" type="checkbox" name="days_of_week" value="2" />
+                                                            &nbsp;Tuesday (36)
+                                                        </label>
+                                                        
+                                                        
+                                                        <label for="document_type" class="col-xs-12">
+                                                            <input checked class="checkbox" type="checkbox" name="days_of_week" value="3" />
+                                                            &nbsp;Wednesday (0)
+                                                        </label>
+                                                        
+                                                        
+                                                        <label for="document_type" class="col-xs-12">
+                                                            <input checked class="checkbox" type="checkbox" name="days_of_week" value="4" />
+                                                            &nbsp;Thursday (0)
+                                                        </label>
+                                                        </div>
+                                                        <div class="col-sm-6">
+                                                        <label for="document_type" class="col-xs-12">
+                                                            <input checked class="checkbox" type="checkbox" name="days_of_week" value="5" />
+                                                            &nbsp;Friday (12)
+                                                        </label>
+                                                        
+                                                        
+                                                        <label for="document_type" class="col-xs-12">
+                                                            <input checked class="checkbox" type="checkbox" name="days_of_week" value="6" />
+                                                            &nbsp;Saturday (0)
+                                                        </label>
+                                                        
+                                                        
+                                                        <label for="document_type" class="col-xs-12">
+                                                            <input checked class="checkbox" type="checkbox" name="days_of_week" value="7" />
+                                                            &nbsp;Sunday (0)
+                                                        </label>
+                                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary btn-sm" name="action_search" value="Search">
+                                        Search
+                                    </button>
+                                    <button type="submit" class="btn btn-danger btn-sm" name="action_clear" value="Reset">
+                                        Reset
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+								<h3 id="rdv_liste">First available appointments</h3>
+								<div class="nextAvailableAppointments">
+                                    <div>
+                                        <div><h4>Conciliateur de justice - Rendez-vous pour un litige avec un particulier</h4></div>
+                                        <div>
+                                            <div>
+                                                    <p><!-- Address :  -->mairie du 9e Arrondissement, 75009 PARIS</p>
+                                                <p class="emphasize_default">Next available slots :</p>
+                                                <ul>
+                                                    <li>
+                                                        <a title="01 December 2026 13:00" href="https://rdvma09.apps.paris.fr/rdvma09/jsp/site/Portal.jsp?page=appointment&view=getViewAppointmentForm&id_form=28&starting_date_time=2026-12-01T13:00&anchor=step3&nbPlacesToTake=1" id="link_RendezVousMA09_28_appointment_first_slot">01 December 2026 13:00</a>
+                                                    </li>
+                                                    <li>
+                                                        <a title="01 December 2026 13:20" href="https://rdvma09.apps.paris.fr/rdvma09/jsp/site/Portal.jsp?page=appointment&view=getViewAppointmentForm&id_form=28&starting_date_time=2026-12-01T13:20&anchor=step3&nbPlacesToTake=1">01 December 2026 13:20</a>
+                                                    </li>
+                                                    <li>
+                                                        <a title="01 December 2026 13:40" href="https://rdvma09.apps.paris.fr/rdvma09/jsp/site/Portal.jsp?page=appointment&view=getViewAppointmentForm&id_form=28&starting_date_time=2026-12-01T13:40&anchor=step3&nbPlacesToTake=1">01 December 2026 13:40</a>
+                                                    </li>
+                                                </ul>
+                                                <p>45 other available slot(s).</p>
+                                                <!-- <p><span class="emphasize_default">Number of available slots :</span> 48 (Occupancy rate : 0%)</p> -->
+                                            </div>
+                                            <div>
+                                                <a id="link_RendezVousMA09_28_appointment_full_calendar" class="btn btn-primary btn-sm" href="https://rdvma09.apps.paris.fr/rdvma09/jsp/site/Portal.jsp?page=appointment&view=getViewAppointmentCalendar&id_form=28&nbPlacesToTake=1">View full schedule</a>
+                                            </div>
+                                        </div>
+                                    </div>
+								</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery/plugins/ui/jquery-ui.min.js"></script>
+<script src="js/jquery/plugins/ui/ui.datepicker-fr.js"></script>
+<script>
+    $( "#from_date" ).datepicker({
+        regional: "fr",    
+        changeMonth: true,
+        changeYear: true,
+        onClose: function( selectedDate ) {
+            $( "#to_date" ).datepicker( "option", "minDate", selectedDate );
+      }
+    }).datepicker(  );
+    $( "#to_date" ).datepicker({
+      regional: "fr",    
+      changeMonth: true,
+      changeYear: true,
+      onClose: function( selectedDate ) {
+        $( "#from_date" ).datepicker( "option", "maxDate", selectedDate );
+      }
+    });
+    window.lutece_appointment_solrsearchapp_points = [
+        
+        {
+            "type": "appointment",
+            "code": "appointment",
+            "url_base": "https://rdvma09.apps.paris.fr/rdvma09/",
+            "id": "RendezVousMA09_28_appointment",
+            "geojson": {"geometry":{"coordinates":[2.3414,48.8724],"type":"Point"},"properties":{"address":"mairie du 9e Arrondissement, 75009 PARIS","icon":"appointmentslot-1/1-appointmentslot"},"type":"Feature"}
+        }
+    ];
+    window.lutece_appointment_solrsearchapp_freePlaces = {
+        "RendezVousMA09_28_appointment": {
+            "free": 48,
+            "total": 48
+        }
+    }
+    $(document).ready(function() {
+        $("#map_col").show();
+        $("#searchForm").hide();
+        doDisplaySearchForm();
+        /*$("#advanced_search").hide();*/
+        $("#advanced_search_button").click(function () {
+            $("#advanced_search").toggle();
+        });
+        $("#tgSearchForm").click(function () {
+            doDisplaySearchForm();
+            return false;
+        });
+        function doDisplaySearchForm(){
+			var msgCarto = $('#cartomessage').html();
+			$('#message-carto').html( msgCarto );
+            $("#searchForm").toggle();
+            $("#map_col").toggleClass("col-md-8").toggleClass("col-md-12");
+            $("#tgSearchForm > i.hidden-xs").toggleClass("fa fa-chevron-left").toggleClass("fa fa-chevron-right");
+            $("#tgSearchForm > i.hidden-md").toggleClass("fa fa-angle-double-down").toggleClass("fa fa-angle-double-up");
+            $("#tgSearchForm > span.hidden-xs").toggleClass("hidden");
+            if ( typeof(map) != 'undefined' ) {
+                map.invalidateSize(true);
+            }
+        }
+    });
+</script>
+
+
+
+
+<!-- container -->
+<br />
+</div>
+
+<footer role="contentinfo" id="site_footer">
+<div class="row footer">
+	<div class="container">
+		<div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+			<a href="http://www.paris.fr" title="Paris.fr [New window]" target="_blank"><img src="images/logo_mdp.png" alt="Paris.fr"></a>
+		</div>
+		<div class="col-xs-12 col-sm-9 col-md-10 col-lg-10">
+			<ul>
+				<li>
+					<a href="http://www.paris.fr/" title="Paris.fr [New window]" target="_blank"><strong>Paris.fr</strong></a>
+				</li>
+				<li>
+					<a href="http://www.paris.fr/mentions-legales" title="Legal information [New window]" target="_blank">Legal information</a>
+				</li>
+				<li>
+					<a href="https://lutece.paris.fr" title="lutece [New window]" target="_blank">Made by Lutèce</a>
+				</li>
+				<li>
+					<a href="jsp/site/Portal.jsp?page=htmlpage&htmlpage_id=1" title="lutece [New window]" target="_blank">Accessibilité : non conforme</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+</footer>
+
+<!-- HTMLPAGES 					-->
+<!-- Search Appointment Home 	-->
+<div id="searchmessage" hidden><h2><strong>D&eacute;claration d&rsquo;accessibilit&eacute;</strong></h2>
+<p>La Ville de Paris s&rsquo;engage &agrave; rendre ses sites internet accessibles, conform&eacute;ment &agrave; l&rsquo;article 47 de la loi n&deg; 2005-102 du 11 f&eacute;vrier 2005.</p>
+<p>&Agrave; cette fin, elle met en &oelig;uvre un sch&eacute;ma pluriannuel de mise en accessibilit&eacute; 2024 (en cours de production).</p>
+<p>La pr&eacute;sente d&eacute;claration d&rsquo;accessibilit&eacute; s&rsquo;applique au service num&eacute;rique de prise de rendez-vous en ligne.</p>
+<p>L&rsquo;audit de conformit&eacute; r&eacute;alis&eacute; par la soci&eacute;t&eacute; Access42 s&rsquo;est bas&eacute; sur le site de prise de rendez-vous de la <a href="https://rdvdlh.apps.paris.fr/rdvdlh/jsp/site/Portal.jsp" target="_blank">Direction du Logement et de l'Habitat</a>. Cet audit est valable &eacute;galement pour tous les autres sites de prise de rendez-vous de la Ville de Paris.</p>
+<h3>&Eacute;tat de conformit&eacute;</h3>
+<p>Le site de prise de rendez-vous (<a href="https://rdvdaj.apps.paris.fr/rdvdaj/jsp/site/Portal.jsp" target="_blank">Direction des Affaires Juridiques</a>) est non conforme avec le r&eacute;f&eacute;rentiel g&eacute;n&eacute;ral d&rsquo;am&eacute;lioration de l&rsquo;accessibilit&eacute;, <a href="https://accessibilite.numerique.gouv.fr/" target="_blank">RGAA version 4.1</a>, en raison des non-conformit&eacute;s &eacute;num&eacute;r&eacute;es dans la section &laquo; R&eacute;sultats des tests &raquo;.</p>
+<h3>R&eacute;sultats des tests</h3>
+<p>L&rsquo;audit de conformit&eacute; r&eacute;alis&eacute; par la soci&eacute;t&eacute; Access42 r&eacute;v&egrave;le que le site est conforme &agrave; 39,66 % au RGAA version 4.1.</p>
+<p><strong>Contenus inaccessibles</strong></p>
+<p>Les contenus list&eacute;s ci-dessous ne sont pas accessibles pour les raisons suivantes.</p>
+<p><span style="color: #800000;">Non-conformit&eacute;s</span></p>
+<ul>
+<li>[1.1] Des images porteuses d&rsquo;informations n&rsquo;ont pas d&rsquo;alternative ;</li>
+<li>[1.2] Des images de d&eacute;coration ne sont pas ignor&eacute;es des technologies d&rsquo;assistance ;</li>
+<li>[3.1 &ndash; 10.09] Des informations sont v&eacute;hicul&eacute;es uniquement par la couleur ou par la forme ;</li>
+<li>[3.2] [3.3] Des textes et des composants d&rsquo;interfaces ont des contrastes insuffisants ;</li>
+<li>[5.4 &ndash; 5.6 &ndash; 5.7] Des tableaux ont des cellules d&rsquo;en-t&ecirc;tes et des titres qui ne sont pas correctement d&eacute;finis ;</li>
+<li>[6.1 &ndash; 6.2] Des liens n&rsquo;ont pas d&rsquo;intitul&eacute; ou pas d&rsquo;intitul&eacute; explicite ;</li>
+<li>[7.1] Des fonctionnalit&eacute;s JavaScript ne sont pas compatibles avec les technologies d&rsquo;assistance (notamment des contenus qui s&rsquo;affichent et se masquent, des infobulles)&nbsp;;</li>
+<li>[8.6] Des pages n&rsquo;ont pas de titre de page pertinent ;</li>
+<li>[8.7] Des changements de langue dans le texte ne sont pas signal&eacute;s ;</li>
+<li>[8.9] Des pages font usage de balises &agrave; des fins de pr&eacute;sentation (par exemple des paragraphes vides et des textes non structur&eacute;s dans des balises de paragraphes) ;</li>
+<li>[9.1] Des pages ont une hi&eacute;rarchie de titres non pertinente (titres manquants ou mal d&eacute;finis) ;</li>
+<li>[9.2] La structure des zones principales des pages est mal d&eacute;finie ;</li>
+<li>[9.3] Des suites d&rsquo;&eacute;l&eacute;ments ne sont pas structur&eacute;es avec des listes ;</li>
+<li>[10.1] Des balises ou attributs HTML de pr&eacute;sentation sont pr&eacute;sents dans certaines pages ;</li>
+<li>[10.2] Des pages contiennent des informations ins&eacute;r&eacute;es en CSS qui ne sont pas restitu&eacute;es par les technologies d&rsquo;assistance ;&nbsp;</li>
+<li>[10.4 &ndash; 10.12] Des pages pr&eacute;sentent des pertes d&rsquo;information et de lisibilit&eacute; lorsqu&rsquo;elles sont zoom&eacute;es &agrave; 200% ou lorsque des propri&eacute;t&eacute;s d&rsquo;espacement de texte sont appliqu&eacute;es ;</li>
+<li>[10.6] Des liens en environnement de texte ne sont pas suffisamment visibles ;</li>
+<li>[10.7] Des indications visuelles de prise de focus ne sont pas suffisamment contrast&eacute;es et sont d&eacute;sactiv&eacute;es ;</li>
+<li>[10.11] Des contenus pr&eacute;sentent des pertes d&rsquo;informations lorsque les pages sont zoom&eacute;es &agrave; 400% ;</li>
+<li>[10.13] Certains contenus additionnels apparaissant au survol ou &agrave; la prise de focus ne sont pas atteignables au clavier ;</li>
+<li>[11.1] Des champs de formulaires n&rsquo;ont pas d&rsquo;&eacute;tiquette correctement li&eacute;e&nbsp;;</li>
+<li>[11.4] Certaines &eacute;tiquettes ne sont pas accol&eacute;es &agrave; leur champ ;</li>
+<li>[11.5] Des champs de m&ecirc;me nature ne sont pas regroup&eacute;s ;</li>
+<li>[11.9] Des boutons de formulaire ont un intitul&eacute; qui n&rsquo;est pas pertinent ;</li>
+<li>[11.10 &ndash; 11.11] Des aides &agrave; la saisie sont absentes pour les champs qui attendent un format particulier, et les champs obligatoires ne sont pas correctement indiqu&eacute;s, et les messages d&rsquo;erreurs ne sont pas reli&eacute;s aux champs correspondants ;</li>
+<li>[11.13] Certains formulaires ne permettent pas le remplissage automatique des champs avec les donn&eacute;es de l&rsquo;utilisateur ;</li>
+<li>[12.7] Il manque un lien d&rsquo;acc&egrave;s rapide au contenu principal des pages ;</li>
+<li>[12.8] Des pages pr&eacute;sentent des probl&egrave;mes dans le parcours de tabulation en raison d&rsquo;&eacute;l&eacute;ments masqu&eacute;s et de prise de focus forc&eacute;e au chargement de pages.</li>
+</ul>
+<p><span style="color: #800000;">Contenus non soumis &agrave; l&rsquo;obligation d&rsquo;accessibilit&eacute;</span></p>
+<p>Les contenus de tiers qui ne sont ni financ&eacute;s ni d&eacute;velopp&eacute;s par l&rsquo;organisme concern&eacute; et qui ne sont pas sous son contr&ocirc;le&nbsp;;</p>
+<p>Par exemple&nbsp;:</p>
+<ul>
+<li>La carte interactive - OpenStreetMap</li>
+</ul>
+<h3>&Eacute;tablissement de cette d&eacute;claration d&rsquo;accessibilit&eacute;</h3>
+<p>Cette d&eacute;claration a &eacute;t&eacute; &eacute;tablie le 31/05/2024. Elle a &eacute;t&eacute; mise &agrave; jour le 06/08/2024.</p>
+<p>Technologies utilis&eacute;es pour la r&eacute;alisation du site</p>
+<ul>
+<li>HTML5</li>
+<li>CSS (Bootstrap)</li>
+<li>JavaScript (Font Awesome, FullCalendar, jQuery, jQuery UI, Modernizer, Leaflet, Moment.js)</li>
+</ul>
+<p>Agents utilisateurs, technologies d&rsquo;assistance et outils utilis&eacute;s pour v&eacute;rifier l&rsquo;accessibilit&eacute;</p>
+<p>Les tests des pages web ont &eacute;t&eacute; effectu&eacute;s avec les combinaisons de navigateurs web et lecteurs d&rsquo;&eacute;cran suivants :</p>
+<ul>
+<li>Firefox 126.0.0 et NVDA NVDA 2023.1</li>
+<li>Firefox 126.0.0 et JAWS JAWS 2023</li>
+<li>Safari 17.1.2 et VoiceOver (macOS 14.1.2)</li>
+<li>Safari et VoiceOver (iOS 17.1.1)</li>
+<li>Chrome et TalkBack (Android 14)</li>
+</ul>
+<p>La v&eacute;rification de l&rsquo;accessibilit&eacute; est le r&eacute;sultat de tests manuels, assist&eacute;s par des outils (feuilles CSS d&eacute;di&eacute;es, extensions HeadingsMaps et WebDeveloper Toolbar, Color Contrast Analyser).</p>
+<p><strong>Pages du site ayant fait l&rsquo;objet de la v&eacute;rification de conformit&eacute;</strong></p>
+<ul>
+<li><a href="https://rdvdlh.apps.paris.fr/rdvdlh/jsp/site/Portal.jsp" target="_blank">Accueil</a></li>
+<li>Accessibilit&eacute;</li>
+<li><a href="https://rdvdlh.apps.paris.fr/rdvdlh/jsp/site/Portal.jsp?page=appointmentsearch&amp;category=BRP" target="_blank">&Eacute;tape 1 - R&eacute;sultats de recherche</a></li>
+<li><a href="https://rdvdlh.apps.paris.fr/rdvdlh/jsp/site/Portal.jsp?page=appointment&amp;view=getViewAppointmentCalendar&amp;id_form=39&amp;nbPlacesToTake=1" target="_blank">&Eacute;tape 2 - Mairie du 12</a></li>
+<li><a href="https://rdvdlh.apps.paris.fr/rdvdlh/jsp/site/Portal.jsp?page=appointment&amp;view=getViewAppointmentCalendar&amp;id_form=39&amp;nbPlacesToTake=0#step3" target="_blank">&Eacute;tape 3 - Saisie des informations</a></li>
+<li><a href="https://rdvdlh.apps.paris.fr/rdvdlh/jsp/site/Portal.jsp?page=appointment&amp;view=getViewFormList#step4" target="_blank">&Eacute;tape 4 - Validation</a></li>
+<li><a href="https://rdvdlh.apps.paris.fr/rdvdlh/jsp/site/Portal.jsp?page=appointment&amp;view=getViewFormList#step5" target="_blank">&Eacute;tape 5 - Confirmation</a></li>
+<li>Courriel du rendez-vous</li>
+<li><a href="https://rdvdlh.apps.paris.fr/rdvdlh/jsp/site/Portal.jsp?page=appointment&amp;view=getViewCancelAppointment&amp;refAppointment=588849da095b82" target="_blank">Annulation du rendez-vous</a></li>
+<li><a href="https://rdvdlh.apps.paris.fr/rdvdlh/jsp/site/Portal.jsp?page=appointment&amp;view=getAppointmentCanceled&amp;id_form=39" target="_blank">Confirmation d&rsquo;annulation de rendez-vous</a></li>
+</ul>
+<h3>Retour d&rsquo;information et contact</h3>
+<p>Il est important de rappeler qu&rsquo;en vertu de l&rsquo;article 11 de la loi de f&eacute;vrier 2005&nbsp;:</p>
+<p><em>&laquo;&nbsp;la personne handicap&eacute;e a droit &agrave; la compensation des cons&eacute;quences de son handicap, quels que soient l&rsquo;origine et la nature de sa d&eacute;ficience, son &acirc;ge ou son mode de vie.&nbsp;&raquo;</em></p>
+<p>La Ville de Paris s'engage &agrave; prendre les moyens n&eacute;cessaires afin de donner acc&egrave;s, dans un d&eacute;lai raisonnable, aux informations et fonctionnalit&eacute;s recherch&eacute;es par la personne handicap&eacute;e, que le contenu fasse l'objet d'une d&eacute;rogation ou non.</p>
+<p>La Ville de Paris invite les personnes qui rencontreraient des difficult&eacute;s &agrave; la utiliser le <a href="https://v70-auth.paris.fr/auth/realms/paris/protocol/openid-connect/auth?client_id=G92-PROD&amp;response_type=code&amp;redirect_uri=https%3A%2F%2Fsollicitations.paris.fr%2Fticketing%2Fservlet%2Fplugins%2Foauth2%2Fcallback%3Fdata_client%3DauthData&amp;scope=openid&amp;state=25b76e7e64d5&amp;nonce=5fd4a1cdf51d&amp;app_code=G92-Gru-Ticketing" target="_blank">formulaire de contact concernant l&rsquo;accessibilit&eacute;</a> afin qu&rsquo;une assistance puisse &ecirc;tre apport&eacute;e (alternative accessible, information et contenu donn&eacute;s sous une autre forme).</p>
+<h3>Voies de recours</h3>
+<p>Si vous constatez un d&eacute;faut d'accessibilit&eacute; vous emp&ecirc;chant d'acc&eacute;der &agrave; un contenu ou une fonctionnalit&eacute; du site, que vous nous le signalez et que vous ne parvenez pas &agrave; obtenir une r&eacute;ponse de notre part, vous &ecirc;tes en droit de faire parvenir vos dol&eacute;ances ou une demande de saisine au D&eacute;fenseur des droits.</p>
+<p>Plusieurs moyens sont &agrave; votre disposition :</p>
+<ul>
+<li><a href="https://formulaire.defenseurdesdroits.fr/formulaire_saisine/" target="_blank">&Eacute;crire un message au D&eacute;fenseur des droits</a></li>
+<li><a href="https://www.defenseurdesdroits.fr/carte-des-delegues" target="_blank">Contacter le d&eacute;l&eacute;gu&eacute; du D&eacute;fenseur des droits dans votre r&eacute;gion</a></li>
+<li>Envoyer un courrier par la poste (courrier gratuit, sans affranchissement) : Le D&eacute;fenseur des droits - Libre r&eacute;ponse 71120 - 75342 Paris CEDEX 07.</li>
+</ul></div>
+<div id="infomessage" hidden></div>
+<div id="cartomessage" hidden></div>
+<!-- Le javascript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/plugins/leaflet/leaflet/leaflet.js?lutece_h=6917811f3223a0cccaae9d07e179f15c89b49b0b8d1bf17ed34a4a0e216e2f12"></script><script src="js/plugins/leaflet/leaflet/leaflet.markercluster.js?lutece_h=0c6d138c656dd7d0fbf8816499ceaa09c4cee66bd00f461fc4dbee0885e4c7a9"></script><script src="js/plugins/leaflet/esri/esri-leaflet.js?lutece_h=91d9ac5b66ec1e426d636a498c841cd21ed16917f9c998a9cdf1b5b4fbc4df1f"></script><script src="js/plugins/appointment/modules/solrsearchapp/leaflet-appointmentsearch.js?lutece_h=4bb2d61b40613ea3bdd5d0b5301b988e8c62b00515fc24673c5ce9b67c234f6f"></script><script src="js/plugins/asynchronousupload/vendor/jquery.ui.widget.js?lutece_h=60b1c29cfb4eda82691de5f3d3b79243e490d8116080d837523245906c00e366"></script><script src="js/plugins/asynchronousupload/vendor/canvas-to-blob.js?lutece_h=52cae09d969837878ad539641c623b208365a1a6386fb94b17c2ccb6cf72cf06"></script><script src="js/plugins/asynchronousupload/vendor/jquery.Jcrop.js?lutece_h=d3eb28839ed32477e27a17194998056d2d0b2a6489f68cc4385d17656e03697b"></script><script src="js/plugins/asynchronousupload/vendor/promise-polyfill.js?lutece_h=91fba644574bcabd9b1e1a74be22c6d741443d7d276335ae58776a2a2b86adb7"></script><script src="js/plugins/asynchronousupload/jquery.iframe-transport.js?lutece_h=a2b1f8b26a7047785ad53090273f91c2684abd0d694224941262517e7da2536e"></script><script src="js/plugins/asynchronousupload/load-image.all.min.js?lutece_h=bd00cce70f79d462baba8896a10bc60c0d7c1014c0f9f71e1c873f959e5921cb"></script><script src="js/plugins/asynchronousupload/jquery.fileupload.js?lutece_h=4ea2c356ae45407e0bbbd630fedd39e475e41232b1fdae0683635bd96b4df7b5"></script><script src="js/plugins/asynchronousupload/jquery.fileupload-process.js?lutece_h=875d7ec02e9b736a9af6ca6b730aa1c10ea5bee12520700d7380d7e3ba385cd8"></script><script src="js/plugins/asynchronousupload/jquery.fileupload-image.js?lutece_h=2c95a461a13a546a485b214c3c1f12fb40810af24048621f298eb890974eb891"></script><script src="js/plugins/asynchronousupload/jquery.fileupload-validate.js?lutece_h=e0fd9c343a53561334b388f232ad19fdc8fe903fb9b7c8322f8cc1bc6d06331b"></script><script src="js/plugins/asynchronousupload/config.js?lutece_h=b79f4b33fbfb3d54b5ffd770b0f890460dbdc27e9e7dd613d1d0654a998c8a61"></script>
+<!-- CNIL Consent TarteAuCitron / Needs Matomo plugin -->
+<script src="js/tarteaucitron/tarteaucitron.js"></script>
+<!-- Service Mon Paris -->
+<script>
+tarteaucitron.services.monparis={
+"key": "monparis",
+"type": "api",
+"name": "Mon Paris",
+"uri": "https://moncompte.paris.fr",
+"readmoreLink": "https://www.paris.fr/pages/cookies-234",
+"needconsent": false,
+"useExternalCss" : true,
+"mandatory": true,
+"cookies": ['mcpAuth','JSESSIONID','AUTH_SESSION_ID','KEYCLOAK_IDENTITY','KEYCLOAK_SESSION'],
+"js": function () {
+"use strict";
+// When user allow cookie
+},
+"fallback": function () {
+"use strict";
+// when use deny cookie
+}
+};
+tarteaucitron.init({
+"privacyUrl": "//www.paris.fr/pages/mentions-legales-235#confidentialite-et-protection-des-donnees", /* Privacy policy url */
+"hashtag": "#cookiepolicyparisfr", /* Open the panel with this hashtag */
+"cookieName": "cookieparisfr", /* Cookie name */
+"orientation": "bottom", /* Banner position (top - bottom) */
+"showAlertSmall": false, /* Show the small banner on bottom right */
+"cookieslist": true, /* Show the cookie list */
+"adblocker": true, /* Show a Warning if an adblocker is detected */
+"AcceptAllCta" : true, /* Show the accept all button when highPrivacy on */
+"DenyAllCta" : false, /* Show the Deny all button when highPrivacy on */
+"highPrivacy": true, /* Disable auto consent */
+"handleBrowserDNTRequest": true, /* If Do Not Track == 1, disallow all */
+"removeCredit": false, /* Remove credit link */
+"moreInfoLink": true, /* Show more info link */
+"useExternalCss": true, /* If false, the tarteaucitron.css file will be loaded */
+"readmoreLink": "https://www.paris.fr/pages/cookies-234", /* Change the default readmore link */
+"mandatory": true, /* Show a message about mandatory cookies */
+});
+(tarteaucitron.job = tarteaucitron.job || []).push('monparis');
+tarteaucitron.user.matomoId = 525;
+var u=("https:" == document.location.protocol) ? "https://mtmdsin.apps.paris.fr/matomo/" : "https://mtmdsin.apps.paris.fr/matomo/";
+tarteaucitron.user.matomoHost = u;
+(tarteaucitron.job = tarteaucitron.job || []).push('matomo');
+</script>
+
+
+</body>
+</html>
